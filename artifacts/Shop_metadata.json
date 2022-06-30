@@ -14,6 +14,25 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "Products",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_id",
 						"type": "uint256"
 					},
@@ -23,7 +42,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "addItem",
+				"name": "addProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -36,7 +55,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "buyItem",
+				"name": "buyProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -92,25 +111,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "items",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
 						"name": "_client",
 						"type": "address"
@@ -121,7 +121,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "listClientItems",
+				"name": "listClientProducts",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -153,7 +153,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "listItems",
+				"name": "listProducts",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -172,7 +172,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "returnItem",
+				"name": "returnProduct",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -206,11 +206,11 @@
 	},
 	"sources": {
 		"TechnoLime_Store.sol": {
-			"keccak256": "0xd99670fd12f0f46aacf595e1b3369df4a383004f80be2fa2600dd44fffec0503",
+			"keccak256": "0x0740c67663d8d62fe0c8786c7bea1f1e1dd9b045ac2aee5d4b9035635d8bc61e",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://dfdb27589e603efb0dc9349feacb7b3e195013b31e6dd537b99bb54f5e1c0a03",
-				"dweb:/ipfs/QmVviPkHvN1RfoEGt3jGdQz4FQVZdx7HkWFSs6rPFKbDYX"
+				"bzz-raw://5bdf7a92fb08b0c748308f7c6936c542be8bf76aa4cb0746c1e6cdbfc57c0766",
+				"dweb:/ipfs/QmaiuCU6MxgWMeG7UeSRQhAXuno9m6Tw68QeRx39p2yH22"
 			]
 		}
 	},

@@ -1,53 +1,56 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.0;
+pragma solidity ^0.8;
 
-contract Shop {
+//creating the Store contract
+contract Store {
 	address private owner;
 	
-	struct SoldItem {
+	struct SoldProduct {
 		uint quantity;
 		uint blocktime;
 	}
 	
-	mapping(uint => uint) public items;
-	mapping(address => mapping(uint => SoldItem)) public clientPurchases;
+	mapping(uint => uint) public Products;
+	mapping(address => mapping(uint => SoldProduct)) public clientPurchases;
 	mapping(uint => address) public clients;
 	uint totalClients = 0;
 
+//setting up the construtor and the MAIN functions bellow
 	constructor() {
 		owner = msg.sender;
 	}
 
-	function addItem(uint _id, uint _quiantity) public {
-		require(msg.sender == owner, "Not owner");
-		items[_id] += _quiantity;
+	function addProduct(uint _id, uint _quiantity) public {
+		require(msg.sender == owner, "Not the owner!");
+		Products[_id] += _quiantity;
 	}
 
-	function listItems(uint _id) public view returns(uint){
-		return items[_id];
+	function listProducts(uint _id) public view returns(uint){
+		return Products[_id];
 	}
 
-	function buyItem(uint _id) public {
-		require(msg.sender != owner, "Not client");
-		require(clientPurchases[msg.sender][_id].quantity == 0, "Client already has this product");
-		require(items[_id] > 0, "No items to sell");
+	function buyProduct(uint _id) public {
+		require(msg.sender != owner, "Non existing client");
+		require(clientPurchases[msg.sender][_id].quantity == 0, "Client dublicate of products");
+		require(Products[_id] > 0, "Nothing to sell");
 		clientPurchases[msg.sender][_id].quantity ++;
 		clientPurchases[msg.sender][_id].blocktime = block.number;
-		items[_id] --;
+		Products[_id] --;
 		clients[totalClients] = msg.sender;
 		totalClients ++;
 	}
 
-	function returnItem(uint _id) public {
-		require(msg.sender != owner, "Not client");
-		require(clientPurchases[msg.sender][_id].quantity > 0, "No items to return");
-		if(block.number - clientPurchases[msg.sender][_id].blocktime <= 100) {
+	function returnProduct(uint _id) public {
+		require(msg.sender != owner, "Non existing client");
+		require(clientPurchases[msg.sender][_id].quantity > 0, "Nothing to return");
+        //enabling the return of the products if they are not satisfied (within a certain period in blocktime: 100 blocks).
+		if(block.number - clientPurchases[msg.sender][_id].blocktime <= 100) { 
 			delete clientPurchases[msg.sender][_id];
-			items[_id] ++;
+			Products[_id] ++;
 		}
 	}
 	
-	function listClientItems(address _client, uint _id) public view returns(uint){
+	function listClientProducts(address _client, uint _id) public view returns(uint){
 		return clientPurchases[_client][_id].quantity;
 	}
 
