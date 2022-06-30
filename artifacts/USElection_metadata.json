@@ -1,0 +1,237 @@
+{
+	"compiler": {
+		"version": "0.8.15+commit.e14f2714"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "winner",
+						"type": "uint256"
+					}
+				],
+				"name": "LogElectionEnded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "winner",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "stateSeats",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "state",
+						"type": "string"
+					}
+				],
+				"name": "LogStateResult",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "BIDEN",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TRUMP",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentLeader",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "electionEnded",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "endElection",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "resultsSubmitted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"name": "seats",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "votesBiden",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "votesTrump",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "stateSeats",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct USElection.StateResult",
+						"name": "result",
+						"type": "tuple"
+					}
+				],
+				"name": "submitStateResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"USElection.sol": "USElection"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ownable.sol": {
+			"keccak256": "0x30bfd6a9054e6d5057c4fa2cfd62ced69d2e563c9c66799f7b895833382b7f4e",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ed58c5343f8174a0dc91839967e69af81369b86a884472ab277b953a28e5c73a",
+				"dweb:/ipfs/Qmd3u12UH7KCGgCL9woSD5p2UJXLpuLJ8sHLLcL4bmvKLP"
+			]
+		},
+		"USElection.sol": {
+			"keccak256": "0xa95895a3bd8bedf73384995b735858ed1bd9e294bac3e498d9504d510bb926ac",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://88324b2663312d762c6634c2b76462aded12045c0900457a3f3ad9fa93959eba",
+				"dweb:/ipfs/QmNh8btLJQdBj7Bde6FgvzzYhCaf5RSBTscUszxxhoSQDY"
+			]
+		}
+	},
+	"version": 1
+}
